@@ -1,10 +1,16 @@
 module.exports = {
-  lintOnSave: false,
   devServer: {
-    // proxy: {
-    //   // '/ajax': {
-    //   //     target: 'http://m.maoyan.com',
-    //   //     changeOrigin: true,
-    // }
-  }
+    overlay: {
+      warnings: false,
+      errors: false
+    },
+    proxy: {
+      // '/gateway': {
+      //   target: 'https://m.maizuo.com',
+      //   changeOrigin: true
+      // }
+    }
+
+  },
+  lintOnSave: false // 关了eslint 检查
 }
