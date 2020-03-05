@@ -23,10 +23,6 @@ const routes = [
     component: () => import('@/views/Detail')
   },
   {
-    path: '/search',
-    component: () => import('@/views/Search')
-  },
-  {
     path: '/silo/crossborder',
     component: () => import('@/views/silo/Crossborder')
   },
