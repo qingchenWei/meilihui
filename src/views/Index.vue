@@ -1,10 +1,6 @@
 <template>
     <div>
-        <div class="topImg" >
-            <img :src="bannerData.main_image" />
-            <h3>{{bannerData.main_title}}</h3>
-            <p>{{bannerData.sub_title}}</p>
-        </div>
+        <topimg :data="bannerData"></topimg>
         <div class="count">
             <div v-for="(item,index) in newGoods" :key="index">
                 <p>
@@ -26,6 +22,9 @@
 <script>
 import axios from 'axios'
 import goodslist from '@/components/GoodsList'
+import topimg from '@/components/TopImg'
+import { Toast } from 'vant'
+import 'vant/lib/index.css'
 export default {
     data(){
         return {
@@ -35,53 +34,36 @@ export default {
         }
     },
     components:{
-        goodslist
+        goodslist,
+        topimg
+    },
+    beforeMount () {
+     Toast.loading({
+        mask: true,
+        message: '加载中...'
+        });
     },
     mounted() {
         axios.get("http://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000008&platform_code=PLATEFORM_H5").then(res=>{
             this.bannerData=res.data.banners[0]
+            console.log(this.bannerData)
         })
         axios.get("http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1583305321418&summary=6b29229d95b3bb61cfd2e9d2d1b4a140&platform_code=H5").then(res=>{
             this.newDay=res.data.lists
+            Toast.clear()
         })
        
         axios.get("http://www.mei.com/appapi/ninenew/operational/v1?credential=").then(res=>{
         this.newGoods=res.data.show2
         console.log(this.newGoods)
+        
         })
     },
     
 }
 </script>
 <style lang="scss">
-*{
-    margin: 0;
-    padding: 0;
-}
-.topImg{
-    position: relative;
-    height: 450px;
-    img{
-        width: 100%;
-        height: 450px;
-    }
-    h3{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom:100px;
-        color: white;
-        font: 600 30px/40px "";
-    }
-    p{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom:80px;
-        color: white;
-    }
-    
-}
+
 .dayNew{
     h3{
         margin-left: 20px;

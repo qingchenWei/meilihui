@@ -1,9 +1,9 @@
 <template>
     <div class="good">
         <ul>
-            <li v-for="item in data" :key="item.eventId">
+            <li v-for="item in data" :key="item.eventId" @click="handleClick(item.eventId)">
                 <img :src="item.imageUrl">
-                <div>
+                <div class="lay">
                     <p>{{item.englishName}}</p>
                     <p>{{item.chineseName}}</p>
                     <p>{{item.discountText}}</p>
@@ -15,6 +15,11 @@
 <script>
 export default {
     props:["data"],
+    methods: {
+        handleClick(id){
+            this.$router.push('/productlist/' + id)
+        }
+    },
 }
 </script>
 <style lang="scss">
@@ -32,8 +37,8 @@ export default {
                 position: absolute;
                 left: 30px;
                 bottom: 20px;
-                color: white;
-                text-align: left
+                color: rgb(255, 255, 255);
+                text-align: left;
             }
         }
     }
