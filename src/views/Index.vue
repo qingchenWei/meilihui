@@ -46,7 +46,6 @@ export default {
     mounted() {
         axios.get("http://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000008&platform_code=PLATEFORM_H5").then(res=>{
             this.bannerData=res.data.banners[0]
-            console.log(this.bannerData)
         })
         axios.get("http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1583305321418&summary=6b29229d95b3bb61cfd2e9d2d1b4a140&platform_code=H5").then(res=>{
             this.newDay=res.data.lists
@@ -55,14 +54,12 @@ export default {
        
         axios.get("http://www.mei.com/appapi/ninenew/operational/v1?credential=").then(res=>{
         this.newGoods=res.data.show2
-        console.log(this.newGoods)
-        
         })
     },
     
 }
 </script>
-<style lang="scss">
+<style lang="scss" scope>
 
 .dayNew{
     h3{

@@ -46,6 +46,14 @@ const routes = [
     path: '/silo/kids',
     component: () => import('@/views/silo/Kids')
   },
+  {
+    path: '/login',
+    component: () => import('@/views/Login')
+  },
+  // {
+  //   path: '/search',
+  //   component: () => import('@/views/Search')
+  // },
 ]
 
 const router = new VueRouter({

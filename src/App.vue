@@ -1,9 +1,21 @@
 <template>
   <div id="app">
+    <tab v-if="isTabshow"  v-indextitle="60"></tab>
     <router-view></router-view>
   </div>
 </template>
-
+<script>
+import tab from '@/components/Tab'
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState(['isTabshow'])
+  },
+  components:{
+        tab
+    }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

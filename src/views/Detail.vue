@@ -1,11 +1,11 @@
 <template>
   <div class="box">
-    <div class="detailtitle" v-title="100">
+    <div class="detailtitle" >
       <i class="iconfont icon-back btn" @click="handleClick()"></i>
       <span>{{datalist.eventName || datalist.categroyTwoName}}</span>
       <i class="iconfont icon-category more" @click="moreClick()"></i>
         <ul class="morelist" v-if="isShow">
-            <router-link v-for="item in moreArr" :key="item.name" tag="li" :to="item.path">{{item.name}}</router-link>
+            <router-link v-for="(item,index) in moreArr" :key="item.name" tag="li" :to="item.path" @click.native="tabshow(index)">{{item.name}}</router-link>
         </ul>
       <ul class="toplist">
         <li
@@ -21,10 +21,10 @@
         <li
           v-for="data in datalist.products"
           :key="data.productId"
-          style="width:50%;float:left;list-style:none;heigth:315px;"
+          style="width:50%;float:left;list-style:none;height:315px;"
         >
           <div style="padding:10px;">
-            <img style="display:block;width:165px;heigth:220px;" :src="data.imageUrl" alt />
+            <img style="display:block;width:165px;height:220px;" :src="data.imageUrl" alt />
             <!-- <span style="border:1px solid black;font-size:16px;margin-left:-100px;" v-if="data.tagListDto">{{data.tagListDto[1].tag}}</span>
             <span v-else style="border:1px solid white;color:white;" >1111</span>-->
             <h3
@@ -52,25 +52,23 @@ import vue from "vue";
 import { Toast } from "vant";
 import "vant/lib/index.css";
 import BetterScroll from "better-scroll";
+import {mapMutations} from 'vuex';
 vue.use(Toast);
-vue.directive("title", {
-  inserted(el, bind) {
+import Vue from 'vue'
+vue.directive('title', {
+  inserted (el, bind) {
     window.onscroll = () => {
-      if (
-        (document.documentElement.scrollTop || document.body.scrollTop) >
-        bind.value
-      ) {
-        el.style.display = "none";
-        console.log(el.className);
+      if ((document.documentElement.scrollTop || document.body.scrollTop) > bind.value) {
+        el.style.display = 'none'
       } else {
-        el.style.display = "block";
+        el.style.display = 'block'
       }
-    };
+    }
   },
-  unbind() {
-    window.onscroll = null;
+  unbind () {
+    window.onscroll = null
   }
-});
+})
 export default {
   data() {
     return {
@@ -90,6 +88,7 @@ export default {
     });
   },
   mounted() {
+    this.hide()
     if (this.$route.query.siloId) {
       axios
         .get(
@@ -121,11 +120,18 @@ export default {
     // })
   },
   methods: {
+    tabshow(index){
+        if(index==0){
+          this.show()
+        }
+    },
+    ...mapMutations(['show','hide']),
     moreClick() {   
         this.isShow=!this.isShow
     },
     handleClick() {
       this.$router.back();
+      this.show()
     },
     showClick(data) {
       if (data == 1) {
