@@ -68,7 +68,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-img{width: 100%;}
+img{width: 100%;height: 250px;}
 h3{text-align: left;padding-left: 10px;}
 .brand-top{
     position: relative;
