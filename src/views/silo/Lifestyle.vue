@@ -1,6 +1,6 @@
 <template>
     <div>
-        <topimg :data="bannerData">
+        <topimg :data="bannerData" @goBrand="clickbrand">
             <p class="myslot">{{bannerData.description}}</p>
         </topimg>
         <goodslist :data="datalist"></goodslist>
@@ -29,6 +29,11 @@ export default {
         axios.get("http://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000004&platform_code=PLATEFORM_H5").then(res=>{
             this.bannerData=res.data.banners[0]
         })
+    },
+    methods:{
+        clickbrand(){
+            this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
+        }
     }
 }
 </script>

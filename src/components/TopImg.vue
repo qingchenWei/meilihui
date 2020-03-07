@@ -1,5 +1,5 @@
 <template>
-  <div class="topImg">
+  <div class="topImg" @click="clickBrand">
     <img :src="data.main_image" />
     <h3>{{data.main_title}}</h3>
     <p>{{data.sub_title}}</p>
@@ -8,7 +8,12 @@
 </template>
 <script>
 export default {
-    props:["data"]
+    props:["data"],
+    methods:{
+        clickBrand(){
+            this.$emit("goBrand")
+        }
+    }
 }
 </script>
 <style lang="scss" scope>

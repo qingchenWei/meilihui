@@ -15,6 +15,8 @@
 import  {Search} from 'vant'
 import vue from 'vue'
 import Axios from 'axios'
+import { mapState } from 'vuex'
+
 vue.use(Search)
 export default {
     data () {
@@ -25,11 +27,15 @@ export default {
             curren:0
         }
     },
+    // computed: {
+    //     ...mapState(['isTabshow'])
+    // },
     methods:{
         loginClick(){
             this.$router.push("/login")
         },
         searchClick(){
+            this.isTabshow=false;
             this.$router.push("/search")
         },
         getTablist:function(){

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <topimg :data="bannerData">
+        <topimg :data="bannerData" @goBrand="clickbrand">
             <p class="myslot">{{bannerData.description}}</p>
         </topimg>
         <goodslist :data="datalist"></goodslist>
@@ -15,6 +15,11 @@ export default {
         return {
             datalist:[],
             bannerData:[]
+        }
+    },
+    methods:{
+        clickbrand(){
+            this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
         }
     },
     components:{

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tab v-if="isTabshow"  v-indextitle="60"></tab>
+    <tab v-show="isTabshow"  v-indextitle="60"></tab>
     <router-view></router-view>
   </div>
 </template>

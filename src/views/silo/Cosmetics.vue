@@ -1,6 +1,6 @@
 <template>
     <div>
-        <topimg :data="bannerData">
+        <topimg :data="bannerData" @goBrand="clickbrand">
             <p class="myslot">{{bannerData.description}}</p>
         </topimg>
         <ul class="mynav">
@@ -24,6 +24,7 @@ export default {
             navData:[]
         }
     },
+    
     components:{
         goodslist,
         topimg
@@ -44,6 +45,9 @@ export default {
     methods:{
         handleClick(data){
             this.$router.push({path:'/productlist/',query:{categoryOneId: data.categoryOneId,categroyTwoName:data.categroyTwoName,siloId:data.siloId,thirdCategories:encodeURIComponent(data.categroyTwoName)}})
+        },
+         clickbrand(){
+             console.log("跳转list")
         }
     }
 }

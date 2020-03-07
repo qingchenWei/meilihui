@@ -1,6 +1,6 @@
 <template>
   <div>
-    <topimg :data="bannerData">
+    <topimg :data="bannerData" @goBrand="clickbrand">
       <p class="myslot">{{bannerData.description}}</p>
     </topimg>
     <ul class="mynav">
@@ -55,6 +55,9 @@ export default {
       });
   },
   methods: {
+    clickbrand(){
+      this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
+    },
     handleClick(data) {
       this.$router.push({
         path: "/productlist/",

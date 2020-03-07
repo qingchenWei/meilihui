@@ -30,7 +30,7 @@ export default {
             position: relative;
             margin-top: 10px;
             img{
-                width: 345px;
+                width: 92%;
                 height: 207px;
             }
             div{

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <topimg :data="bannerData"></topimg>
+        <topimg :data="bannerData" @goBrand="clickbrand"></topimg>
         <div class="count">
             <div v-for="(item,index) in newGoods" :key="index">
                 <p>
@@ -25,12 +25,18 @@ import goodslist from '@/components/GoodsList'
 import topimg from '@/components/TopImg'
 import { Toast } from 'vant'
 import 'vant/lib/index.css'
+
 export default {
     data(){
         return {
             bannerData:[],
             newDay:[],
             newGoods:[]
+        }
+    },
+    methods:{
+        clickbrand(){
+            this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
         }
     },
     components:{

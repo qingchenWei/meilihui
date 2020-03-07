@@ -19,6 +19,18 @@ const routes = [
     component: () => import('@/views/Detail')
   },
   {
+    path: '/search',
+    component: () => import('@/views/Search')
+  },
+  {
+    path: '/brand/:logoId',
+    component: () => import('@/views/Brand')
+  },
+  {
+    path: '/productdetail/:productId',
+    component: () => import('@/views/Productdetail')
+  },
+  {
     path: '/productlist',
     component: () => import('@/views/Detail')
   },
