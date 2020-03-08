@@ -45,7 +45,8 @@ export default {
     methods:{
         handleClick(data){
             this.$router.push({path:'/productlist/',query:{categoryOneId: data.categoryOneId,categroyTwoName:data.categroyTwoName,siloId:data.siloId,thirdCategories:encodeURIComponent(data.categroyTwoName)}})
-        },
+        }
+        ,
          clickbrand(){
              console.log("跳转list")
         }

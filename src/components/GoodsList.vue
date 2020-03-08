@@ -22,7 +22,7 @@ export default {
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scope>
 *{margin: 0;padding: 0}
 .good{
     ul{

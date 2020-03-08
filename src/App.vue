@@ -13,7 +13,7 @@ export default {
   },
   components:{
         tab
-    }
+  }
 }
 </script>
 <style lang="scss">

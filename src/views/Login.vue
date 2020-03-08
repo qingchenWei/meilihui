@@ -18,7 +18,6 @@ export default {
         ...mapMutations(['hide','show']),
         backClick(){
             this.$router.back()
-            this.show()
         }
     },
     mounted() {
@@ -26,8 +25,10 @@ export default {
         axios.get("http://www.mei.com/appapi/customer/getRegisterTips").then(res=>{
             this.data= res.data
         })
-
     },
+    destroyed(){
+        this.show()
+    }
 }
 </script>
 <style lang="scss" scope>

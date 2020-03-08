@@ -20,7 +20,7 @@
                 <p>
                     <strong>￥{{goodstext.price}}</strong>
                     <van-tag plain  color="#000" class="center">{{goodstext.discount}}</van-tag>
-                    <van-tag type="danger">{{goodstext.newTagList[1].tag}}</van-tag>
+                    <!-- <van-tag type="danger">{{goodstext.newTagList[1].tag}}</van-tag> -->
                 </p>
             </div>
             <!-- 商品介绍 -->

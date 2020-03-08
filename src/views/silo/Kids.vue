@@ -55,7 +55,7 @@ export default {
       });
   },
   methods: {
-    clickbrand(){
+    clickbrand() {
       this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
     },
     handleClick(data) {

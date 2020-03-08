@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav v-indextitle="60">
         <div class="top" >
             <span @click="loginClick()">登录</span>
             <div @click="searchClick()"><i class="iconfont icon-search"></i>{{tip.words}}</div>

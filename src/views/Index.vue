@@ -25,7 +25,6 @@ import goodslist from '@/components/GoodsList'
 import topimg from '@/components/TopImg'
 import { Toast } from 'vant'
 import 'vant/lib/index.css'
-
 export default {
     data(){
         return {
