@@ -59,7 +59,7 @@ export default {
         return {
             datalist:[],
             topArr:["人气","折扣","价格"],
-            moreArr:[{name:"首页",path:"/index"},{name:"购物袋",path:"/cart"},{name:"个人中心",path:"/center"}],
+            moreArr:[{name:"首页",path:"/index"},{name:"购物袋",path:"/shopcar"},{name:"个人中心",path:"/center"}],
             now: 0,
             myindex: 0,
             scrollHeight: "0px",

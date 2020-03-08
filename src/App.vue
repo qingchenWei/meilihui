@@ -6,13 +6,19 @@
 </template>
 <script>
 import tab from '@/components/Tab'
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 export default {
   computed: {
     ...mapState(['isTabshow'])
   },
   components:{
         tab
+  },
+  methods:{
+    ...mapMutations(['show'])
+  },
+  mounted(){
+    this.show()
   }
 }
 </script>

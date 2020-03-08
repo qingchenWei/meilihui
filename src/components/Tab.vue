@@ -3,7 +3,7 @@
         <div class="top" >
             <span @click="loginClick()">登录</span>
             <div @click="searchClick()"><i class="iconfont icon-search"></i>{{tip.words}}</div>
-            <i class="iconfont icon-cart cart"></i>
+            <i class="iconfont icon-cart cart" @click="goCar"></i>
         </div>
         <ul>
             <router-link v-for="(item,index) in tablist" :key="item.categoryId" tag="li"
@@ -15,7 +15,7 @@
 import  {Search} from 'vant'
 import vue from 'vue'
 import Axios from 'axios'
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 
 vue.use(Search)
 export default {
@@ -31,11 +31,17 @@ export default {
     //     ...mapState(['isTabshow'])
     // },
     methods:{
+        ...mapMutations(['hide','show']),
+        goCar(){
+            this.$router.push("/shopCar")
+            this.hide()
+        },
         loginClick(){
             this.$router.push("/login")
+             this.hide()
         },
         searchClick(){
-            this.isTabshow=false;
+             this.hide()
             this.$router.push("/search")
         },
         getTablist:function(){
@@ -58,6 +64,9 @@ export default {
             this.tip=tip.data
         })
         )
+    },
+    destroyed(){
+        this.show()
     }
 }
 </script>

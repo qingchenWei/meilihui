@@ -1,0 +1,69 @@
+let router = require('express').Router();
+// let bcrypt = require('bcrypt')
+let open = require('../../utils/mgdb').open;
+let fs = require('fs');
+let pathLib = require('path');
+
+router.post('/', (req, res, next) => {
+
+  //1.获取username，password
+  let { username, password} = req.body;
+
+  //1.5 设定必传参数
+  if (!username || !password) {
+    res.send({
+      err: 1,
+      msg: '用户名，密码为必传参数'
+    });
+    return;
+  }
+  //3.兜库 校验
+  open({//链接库
+    dbName: 'meilihui',
+    collectionName: 'user'
+  }).then(
+    ({ collection, client }) => {
+
+      //查询
+      collection.find({
+        username
+      }, {}).toArray((err, result) => {//obj->arr
+
+        if (err) {
+          res.send({ err: 1, msg: '集合操作失败4' })
+        } else {
+          //3. 判断用户是否存在，存在数组的长度就有了
+          if (result.length === 0) {//不存在
+            //入库
+            collection.insertOne({
+              username, password
+            }, (err, result) => {
+              if (!err) {
+                res.send({
+                  err: 0, msg: '注册成功'
+                })
+              } else {
+                res.send({ err: 1, msg: '注册失败' })
+              }
+            })
+          } else {
+            res.send({ err: 2, msg: '用户名已存在' });//返回的数据是个对象
+          }
+
+        }
+        client.close()
+
+      })
+
+    }
+  )
+
+
+
+
+
+
+});
+
+
+module.exports = router;

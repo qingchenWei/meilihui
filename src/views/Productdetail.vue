@@ -76,10 +76,21 @@ export default {
     methods:{
         ...mapMutations(['hide','show']),
         goCar(){
-            console.log("跳转到购物车")
+            this.$router.push('/shopcar')
+            this.hide()
         },
         addCar(){
-            console.log('加入购物车,目前商品id->',this.$route.params.productId)
+            Axios.post("http://localhost:3001/api/shopcar", {
+                userId: sessionStorage.getItem("mlh_id"),
+                oprate: "add",
+                goodsId: this.$route.params.productId,
+                img: this.goodstext.images[0].smallImgUrl,
+                price: this.goodstext.price,
+                name: this.goodstext.name,
+                brand: this.goodstext.brand
+            }).then(res => {
+                console.log(res);
+            });
         },
         goBuy(){
             console.log("不要买了你又没钱")
@@ -97,9 +108,6 @@ export default {
             this.goodstext=res.data.infos
             console.log(res.data.infos)
         })
-    },
-    destroyed(){
-        this.show();
     }
 }
 </script>

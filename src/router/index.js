@@ -60,8 +60,23 @@ const routes = [
   },
   {
     path: '/login',
-    component: () => import('@/views/Login')
-  }
+    component: () => import('@/views/user/Login')
+  },
+  {
+    path: '/register',
+    component: () => import('@/views/user/Register')
+  },
+  {
+    path: '/shopcar',
+    component: () => import('@/views/ShopCar'),
+    beforeEnter: (to, from, next)=>{
+        if(sessionStorage.getItem('mlh_token')){
+            next()
+        }else {
+            next('/login')
+        }
+    }
+}
 ]
 
 const router = new VueRouter({

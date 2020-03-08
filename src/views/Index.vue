@@ -25,6 +25,7 @@ import goodslist from '@/components/GoodsList'
 import topimg from '@/components/TopImg'
 import { Toast } from 'vant'
 import 'vant/lib/index.css'
+import { mapMutations } from 'vuex'
 export default {
     data(){
         return {
@@ -34,6 +35,7 @@ export default {
         }
     },
     methods:{
+        ...mapMutations(['hide','show']),
         clickbrand(){
             this.$router.push(`/brand/${this.bannerData.link_url.slice(25)}`);
         }
@@ -49,6 +51,7 @@ export default {
         });
     },
     mounted() {
+        this.show()
         axios.get("http://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000008&platform_code=PLATEFORM_H5").then(res=>{
             this.bannerData=res.data.banners[0]
         })

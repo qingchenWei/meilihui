@@ -16,20 +16,23 @@
   </div>
 </template>
 <script>
+import { mapMutations } from 'vuex';
 export default {
   data() {
     return {
       moreArr: [
         { name: "首页", path: "/index" },
-        { name: "购物袋", path: "/cart" },
+        { name: "购物袋", path: "/shopcar" },
         { name: "个人中心", path: "/center" }
       ],
       isShow: false
     };
   },
   methods: {
+    ...mapMutations(['show']),
     goBack() {
       this.$router.back();
+      this.show()
     },
     moreClick() {
       this.isShow = !this.isShow;
