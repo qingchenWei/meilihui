@@ -17,8 +17,13 @@
         :thumb="data.img"
         />
     </div>
+<<<<<<< HEAD
     <div>eeeeeeeee</div>
     <div>eeeeeeeeebbbb</div>
+=======
+    <div>wewewewe</div>
+    <div>1111111111122222222222</div>
+>>>>>>> e135c724ed570a820e0adc1bd50f3bdaa1b333d5
   </div>
 </template>
 <script>
