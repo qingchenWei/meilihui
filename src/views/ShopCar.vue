@@ -17,15 +17,7 @@
         :thumb="data.img"
         />
     </div>
-<<<<<<< HEAD
     <div>master</div>
-=======
-    <div>eeeeeeeee改的代码</div>
-    <div>eeeeeeeeebbbb</div>
-    <div>wewewewe</div>
-    <div>1111111111122222222222</div>
-    <div>wwwwwwwwww</div>
->>>>>>> www
   </div>
 </template>
 <script>
