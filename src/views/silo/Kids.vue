@@ -32,7 +32,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://www.mei.com/appapi/silo/eventForH5?categoryId=kids&pageIndex=1&timestamp=1583385363277&summary=a85695038abb416be4db66c22b70bdc8&platform_code=H5"
+        "https://www.mei.com/appapi/silo/eventForH5?categoryId=kids&pageIndex=1&timestamp=1583385363277&summary=a85695038abb416be4db66c22b70bdc8&platform_code=H5"
       )
       .then(res => {
         this.datalist = res.data.eventList;
@@ -40,7 +40,7 @@ export default {
 
     axios
       .get(
-        "http://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000005&platform_code=PLATEFORM_H5"
+        "https://www.mei.com/appapi/home/mktBannerApp/v3?silo_id=2013000100000000005&platform_code=PLATEFORM_H5"
       )
       .then(res => {
         this.bannerData = res.data.banners[0];
@@ -48,7 +48,7 @@ export default {
 
     axios
       .get(
-        "http://www.mei.com/appapi/cms/cmsDetail/v3?silo=2013000100000000005&ids=2120000100000000146&timestamp=1583385363563&summary=526421f761c2a012aafcc07067c03352&platform_code=H5"
+        "https://www.mei.com/appapi/cms/cmsDetail/v3?silo=2013000100000000005&ids=2120000100000000146&timestamp=1583385363563&summary=526421f761c2a012aafcc07067c03352&platform_code=H5"
       )
       .then(res => {
         this.navData = res.data.resultList[0].data;

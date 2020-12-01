@@ -17,7 +17,7 @@ export default {
         goodslist
     },
     mounted(){
-        axios.get("http://www.mei.com/appapi/silo/eventForH5?categoryId=men&pageIndex=1&timestamp=1583382501882&summary=f9d3d4b3ac896b4cf30f06f8d98a111c&platform_code=H5").then(res=>{
+        axios.get("https://www.mei.com/appapi/silo/eventForH5?categoryId=men&pageIndex=1&timestamp=1583382501882&summary=f9d3d4b3ac896b4cf30f06f8d98a111c&platform_code=H5").then(res=>{
             this.datalist=res.data.eventList
         })
     }

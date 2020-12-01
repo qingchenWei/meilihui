@@ -56,7 +56,7 @@ export default {
     mounted(){
         this.hide();
         Axios.request({
-            url:`http://www.mei.com/appapi/brand/product/hotNew/v3?logoId=${this.$route.params.logoId}`
+            url:`https://www.mei.com/appapi/brand/product/hotNew/v3?logoId=${this.$route.params.logoId}`
         }).then(res=>{
             this.body=res.data.body
         })

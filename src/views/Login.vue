@@ -22,7 +22,7 @@ export default {
     },
     mounted() {
         this.hide()
-        axios.get("http://www.mei.com/appapi/customer/getRegisterTips").then(res=>{
+        axios.get("https://www.mei.com/appapi/customer/getRegisterTips").then(res=>{
             this.data= res.data
         })
     },

@@ -80,7 +80,7 @@ export default {
             this.hide()
         },
         addCar(){
-            Axios.post("http://localhost:3001/api/shopcar", {
+            Axios.post("https://localhost:3001/api/shopcar", {
                 userId: sessionStorage.getItem("mlh_id"),
                 oprate: "add",
                 goodsId: this.$route.params.productId,
@@ -103,7 +103,7 @@ export default {
     mounted(){
         this.hide();
         Axios.request({
-            url:`http://www.mei.com/appapi/product/detail/v3?categoryId=${this.categoryId}&productId=${this.$route.params.productId}&platform_code=H5&timestamp=1583395183948&summary=56590eaaa28c5282c31c08178b52f397`
+            url:`https://www.mei.com/appapi/product/detail/v3?categoryId=${this.categoryId}&productId=${this.$route.params.productId}&platform_code=H5&timestamp=1583395183948&summary=56590eaaa28c5282c31c08178b52f397`
         }).then(res=>{
             this.goodstext=res.data.infos
             console.log(res.data.infos)

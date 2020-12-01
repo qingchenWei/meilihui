@@ -73,7 +73,7 @@ export default {
         });
     },
     mounted(){
-        axios.get(`http://www.mei.com/appapi/customer/getRegisterTips`).then(res=>{
+        axios.get(`https://www.mei.com/appapi/customer/getRegisterTips`).then(res=>{
             this.loginTips=res.data.tips;
             Toast.clear()
         })
@@ -98,7 +98,7 @@ export default {
                 });
                 delete values.repassword;
                 console.log(values);
-                axios.post(`http://localhost:3001/api/reg`, values).then(res=>{
+                axios.post(`https://localhost:3001/api/reg`, values).then(res=>{
                     console.log(res);
                     Toast.clear()
                 })

@@ -45,10 +45,10 @@ export default {
             this.$router.push("/search")
         },
         getTablist:function(){
-            return Axios.get("http://www.mei.com/appapi/silo/navigationAll/v3?timestamp=1583444359714&summary=f55b8d44faafc051bb9c68ef12493dc0")
+            return Axios.get("https://www.mei.com/appapi/silo/navigationAll/v3?timestamp=1583444359714&summary=f55b8d44faafc051bb9c68ef12493dc0")
         },
         getTip:function(){
-            return Axios.get("http://www.mei.com/appapi/search/searchDefault/v3")
+            return Axios.get("https://www.mei.com/appapi/search/searchDefault/v3")
         },
         pageChange(index){
             this.curren=index;

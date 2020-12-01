@@ -12,5 +12,6 @@ module.exports = {
     // }
 
   },
-  lintOnSave: false // 关了eslint 检查
+  lintOnSave: false, // 关了eslint 检查
+  publicPath: './'
 }

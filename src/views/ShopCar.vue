@@ -32,7 +32,7 @@ export default {
     };
   },
   mounted() {
-    Axios.post("http://localhost:3001/api/shopcar", {
+    Axios.post("https://localhost:3001/api/shopcar", {
       userId: sessionStorage.getItem("mlh_id"),
       oprate: "find"
     }).then(res => {

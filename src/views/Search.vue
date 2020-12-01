@@ -84,7 +84,7 @@ export default {
       let to = document.querySelector(".showhide")
       to.style.display="none"
       this.text = name
-      axios.get(`http://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
+      axios.get(`https://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
         this.datalist=res.data
         console.log(this.datalist)
              Toast.clear();
@@ -101,7 +101,7 @@ export default {
     // 搜索商品
     searchGoods () {
       axios.request({
-        url: `http://www.mei.com/appapi/search/searchSuggest/v3?text=${encodeURIComponent(this.text)}`
+        url: `https://www.mei.com/appapi/search/searchSuggest/v3?text=${encodeURIComponent(this.text)}`
       }).then(res => {
         this.searchList = res.data.result
       })
@@ -116,7 +116,7 @@ export default {
       to.style.display="none"
       //人气
       if(data==0){
-        axios.get(`http://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
+        axios.get(`https://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
         this.datalist=res.data
       })
       this.now=0
@@ -151,11 +151,11 @@ export default {
     this.hide();
     // 搜索提示列表
     axios.request({
-      url: 'http://www.mei.com/appapi/search/searchFind/v3'
+      url: 'https://www.mei.com/appapi/search/searchFind/v3'
     }).then(res => {
       this.findList = res.data.searchFindList
     }),
-     axios.get(`http://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
+     axios.get(`https://www.mei.com/appapi/search/searchKey/v3?pageIndex=1&q=${encodeURIComponent(this.text)}&sort=&key=&searchKeyWord=${encodeURIComponent(this.text)}`).then(res=>{
         this.datalisted=res.data
       })
   },

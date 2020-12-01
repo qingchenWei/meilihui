@@ -64,7 +64,7 @@ export default {
         });
     },
     mounted(){
-        axios.get(`http://www.mei.com/appapi/customer/getRegisterTips`).then(res=>{
+        axios.get(`https://www.mei.com/appapi/customer/getRegisterTips`).then(res=>{
             this.loginTips=res.data.tips;
             Toast.clear()
         })
@@ -89,7 +89,7 @@ export default {
                 message: '请稍候'
             });
             
-            axios.post(`http://localhost:3001/api/login`, values).then(res=>{
+            axios.post(`https://localhost:3001/api/login`, values).then(res=>{
                 console.log(res);
                 console.log(values)
                 Toast.clear();

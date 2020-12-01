@@ -77,7 +77,7 @@ export default {
            if (this.$route.query.siloId) {
       axios
         .get(
-          `http://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=&sort=&timestamp=1583390744750&summary=6363753a2fbe614816d69e2030d97b4e&platform_code=H5`
+          `https://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=&sort=&timestamp=1583390744750&summary=6363753a2fbe614816d69e2030d97b4e&platform_code=H5`
         )
         .then(res => {
           this.datalist = res.data;
@@ -87,7 +87,7 @@ export default {
     } else {
       axios
         .get(
-          `http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=&sort=&timestamp=1583347289449&summary=d8505c94658d53cfbba6daae46368abd&platform_code=H5`
+          `https://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=&sort=&timestamp=1583347289449&summary=d8505c94658d53cfbba6daae46368abd&platform_code=H5`
         )
         .then(res => {
           this.datalist = res.data;
@@ -128,7 +128,7 @@ export default {
         if (!this.$route.query.siloId) {
           axios
             .get(
-              `http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=1&sort=ASC&timestamp=1583354967282&summary=ea6a830066155e77de2343e86739dcbb&platform_code=H5`
+              `https://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=1&sort=ASC&timestamp=1583354967282&summary=ea6a830066155e77de2343e86739dcbb&platform_code=H5`
             )
             .then(res => {
               this.datalist = res.data;
@@ -139,7 +139,7 @@ export default {
         } else {
           axios
             .get(
-              `http://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=1&sort=ASC&timestamp=1583394746711&summary=04e0e24ce216f493a21a5f169438de64&platform_code=H5`
+              `https://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=1&sort=ASC&timestamp=1583394746711&summary=04e0e24ce216f493a21a5f169438de64&platform_code=H5`
             )
             .then(res => {
               this.datalist = res.data;
@@ -154,7 +154,7 @@ export default {
         if (!this.$route.query.siloId) {
           axios
             .get(
-              `http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=&sort=&timestamp=1583347289449&summary=d8505c94658d53cfbba6daae46368abd&platform_code=H5`
+              `https://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.$route.params.id}&key=&sort=&timestamp=1583347289449&summary=d8505c94658d53cfbba6daae46368abd&platform_code=H5`
             )
             .then(res => {
               this.datalist = res.data;
@@ -165,7 +165,7 @@ export default {
         } else {
           axios
             .get(
-              `http://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=&sort=&timestamp=1583395299154&summary=88dea33f0977277eca43a054c4e04a35&platform_code=H5`
+              `https://www.mei.com/appapi/secondcategory/search/v3?brandNames=&chineseCodes=&pageIndex=1&categoryId=${this.$route.query.categoryOneId}&siloId=${this.$route.query.siloId}&thirdCategories=${this.$route.query.thirdCategories}&key=&sort=&timestamp=1583395299154&summary=88dea33f0977277eca43a054c4e04a35&platform_code=H5`
             )
             .then(res => {
               this.datalist = res.data;
